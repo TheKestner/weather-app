@@ -38,7 +38,35 @@ Create a webpage that prompts users to enter a zip code, then displays current w
 
     add Eventhandlers/listenrs for button click Get Weather to work 
 
+    Get Request:
+    // Make a request for a user with a given ID
+    axios.get('/user?ID=12345')
+    .then(function (response) {
+    // handle success
+    console.log(response);
+     })
+    .catch(function (error) {
+    // handle error
+      console.log(error);
+    })
+    .then(function () {
+    // always executed
+    });
+
+    Await/Sync:
+    // Want to use async/await? Add the `async` keyword to your outer function/method.
+    async function getUser() {
+    try {
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+    } catch (error) {
+    console.error(error);
+     }
+    }
+
     
+
+
 
     
 
