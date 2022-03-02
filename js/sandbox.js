@@ -1,25 +1,33 @@
-const { default: axios } = require("axios");
+let weatherLink = 'api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=6821542f34e67bbd5a6f5ebac8501730';
 
-let weather = 'api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=6821542f34e67bbd5a6f5ebac8501730';
+//document.getElementById(weather).addEventListener('submit', );
 
+let state = {
+  weather: '',
+}
 
+// async / axios 
+async function myAsyncAxios() {
+  const request = await fetch(weatherLink);
+  console.log(request);
+  const data = request.json();
+  setState(data)
+}
+myAsyncAxios();
 
-async function getWeather() {
-    try {
-      const response = await axios.get('api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=6821542f34e67bbd5a6f5ebac8501730');
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  console.log(weather);
-
-
-
-
-
-
+// function myFetchPromises() {
+//   // FETCH / Promise
+//   fetch(weatherLink)
+//     .then(resp => {
+//       return resp.json();
+//     })
+//     .then(data => {
+//       setState(data)
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     })  
+// }
 
 
 
