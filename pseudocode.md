@@ -21,7 +21,7 @@ Create a webpage that prompts users to enter a zip code, then displays current w
 
  City: data
 
- Temperature: K | F | C
+ Temperature: K | F | C (Provides in Celsius first from data)
 
  Condition:
  data(ex light rain)
@@ -37,6 +37,7 @@ Create a webpage that prompts users to enter a zip code, then displays current w
 
     add Eventhandlers/listenrs for button click Get Weather to work 
 
+    Handle Errors
     Get Request:
     // Make a request for a user with a given ID
     axios.get('/user?ID=12345')
@@ -64,6 +65,10 @@ Create a webpage that prompts users to enter a zip code, then displays current w
     }
 
 
+    Function to display data that was pulled from weather API
+    If display is sucessful then city name, Current weather, current temp(KFC), Unique image
+
+    Either catch error within the Get or Possibly Catch error its own function?
 
 
 
