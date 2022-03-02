@@ -35,7 +35,9 @@ Create a webpage that prompts users to enter a zip code, then displays current w
     API call by Zip code:  
     api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
 
-    add Eventhandlers/listenrs for button click Get Weather to work 
+    Let Zip code be entered in Button Field
+
+    add Eventhandlers/listenrs for button onsubmit Get Weather to work 
 
     Handle Errors
     Get Request:
