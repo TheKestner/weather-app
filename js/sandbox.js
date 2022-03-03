@@ -1,14 +1,15 @@
 //declaring ids 
-let location = document.getElementById('location');
+let loc = document.getElementById('location');
 let temperature = document.getElementById('temp');
 let condition = document.getElementById('cond');
 let image = document.getElementById('other');
 
 const btn = document.getElementById('click','add');
+const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${api}'
 
 //let weatherLink = 'api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=6821542f34e67bbd5a6f5ebac8501730';
 //document.getElementById(weather).addEventListener('submit', );
-const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${api}'
+
 
 // let state = {
 //   City: '',
@@ -17,15 +18,23 @@ const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2
 //   Image:'',
 // }
 
+
+
 // async / axios 
 async function loadWeather() {
-  const response = await fetch('api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${key}');
+  const response = await fetch('api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}');
   console.log(response);
   const data = response.json();
   setState(data)
 }
 
 loadWeather();
+
+
+
+
+
+
 
 // function myFetchPromises() {
 //   // FETCH / Promise
