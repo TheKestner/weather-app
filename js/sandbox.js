@@ -35,7 +35,7 @@ async function setState(data) {
     // console.log(temperature)
     condition.innerText = data.weather[0].description
     // console.log(condition)
-    let image = data.weather[0].icon // error uncaught properties of null
+    image = data.weather[0].icon // error uncaught properties of null
     // console.log(image)
     
      

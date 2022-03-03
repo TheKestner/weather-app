@@ -82,7 +82,12 @@ Create a webpage that prompts users to enter a zip code, then displays current w
     // Formula Kelvin to Fahrenheit: F = (K – 273.15) × 9⁄5 + 32
     // Formula Kelvin to Celsisu: C = K − 273.15
     // Formula Fahrenheit to Celsius: C = (F − 32) × 5⁄9
-    
+       async function KFC() {
+         let k = data.main.temp
+          let c = k - 273
+          let f = c * (9/5) + 32
+          f = Math.floor(f)
+       }
 
 
 
