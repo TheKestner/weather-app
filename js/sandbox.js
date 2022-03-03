@@ -6,12 +6,13 @@ let temperature = document.getElementById('temp');
 let condition = document.getElementById('cond');
 let image = document.getElementById('other');
 let userInput = document.getElementById('zip');
-
-const btn = document.getElementById('click');
+let btn = document.getElementById('btn');
+let zip = "";
 const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${api}'
 //let weatherLink = 'api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=6821542f34e67bbd5a6f5ebac8501730';
 
 //document.getElementById(weather).addEventListener('submit', );
+
 
 
 // let state = {
@@ -20,10 +21,14 @@ const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2
 //   condition:'',
 //   image:'',
 // }
+function getInput() {
+  let numbers = userInput.value;
+  zip = numbers;
+}
 
 // async / axios 
 async function loadWeather() {
-  let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=${key}`);
+  let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}`);
   console.log(response);
   let data = await response.json();
   console.log(data);
@@ -54,7 +59,7 @@ async function setState(data) {
   
 
 
-  userInput.addEventListener("click",loadWeather);
+  btn.addEventListener("click",loadWeather);
 
 
 
