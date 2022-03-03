@@ -21,7 +21,7 @@ Create a webpage that prompts users to enter a zip code, then displays current w
 
  City: data
 
- Temperature: K | F | C (Provides in Celsius first from data)
+ Temperature: K | F | C (Provides in Kelvin first from data)
 
  Condition:
  data(ex light rain)
@@ -71,7 +71,6 @@ Create a webpage that prompts users to enter a zip code, then displays current w
           let condition = loadWeather(description: [])
           let image = loadWeather(icon: [])
           
-          let values = await Promise.all([loc, temperature, condition, image])
 
 
         }
