@@ -78,9 +78,11 @@ Create a webpage that prompts users to enter a zip code, then displays current w
        userinput.addEventListener("click",loadweather)
 
 
-
-
-
+    // Data temp is provided in Kelvin
+    // Formula Kelvin to Fahrenheit: F = (K – 273.15) × 9⁄5 + 32
+    // Formula Kelvin to Celsisu: C = K − 273.15
+    // Formula Fahrenheit to Celsius: C = (F − 32) × 5⁄9
+    
 
 
 
