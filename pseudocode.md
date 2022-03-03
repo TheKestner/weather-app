@@ -35,6 +35,8 @@ Create a webpage that prompts users to enter a zip code, then displays current w
     API call by Zip code:  
     api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
 
+    Declare Ids for data
+
     City: "name": exLexington
     Temperature: temp": ex291.49
     condition: "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}]
