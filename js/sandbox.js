@@ -23,17 +23,30 @@ const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2
 
 // async / axios 
 async function loadWeather() {
-  let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=${key}`);
+  let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=${key}`);
   console.log(response);
-  let data = response.data
+  let data = response.json();
   console.log(data);
-}
+  }
 
-loadWeather();
+  loadWeather();
+
+  async function displayContent() {
+    let loc = data.name
+    let temperature = data.main.temp
+    let condition = data.weather.description
+    let image = data.weather.icon
+    
+    let values = await Promise.all([loc, temperature, condition, image])
 
 
+  }
 
 
+  
+
+
+  userInput.addEventListener("click",loadWeather);
 
 
 

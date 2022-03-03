@@ -63,6 +63,7 @@ Create a webpage that prompts users to enter a zip code, then displays current w
         console.log(data);
         }
 
+        loadWeather();
 
         async function displayContent() {
           let loc = loadWeather(name: [])
@@ -75,7 +76,7 @@ Create a webpage that prompts users to enter a zip code, then displays current w
 
         }
 
-       
+       userinput.addEventListener("click",loadweather)
 
 
 
