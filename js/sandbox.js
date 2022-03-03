@@ -15,32 +15,40 @@ const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2
 
 
 // let state = {
-//   City: '',
-//   Temperature:0,
-//   Condition:'',
-//   Image:'',
+//   loc: '',
+//   temperature:0,
+//   condition:'',
+//   image:'',
 // }
 
 // async / axios 
 async function loadWeather() {
   let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=${key}`);
   console.log(response);
-  let data = response.json();
+  let data = await response.json();
   console.log(data);
+  setState(data);
   }
 
-  loadWeather();
+  
 
-  async function displayContent() {
-    let loc = data.name
-    let temperature = data.main.temp
-    let condition = data.weather.description
-    let image = data.weather.icon
+async function setState(data) {
+    loc.innerText = data.name
+    console.log(loc);
+    temperature.innerText = data.main.temp
+    console.log(temperature)
+    condition.innerText = data.weather[0].description
+    console.log(condition)
+    let image = data.weather[0].icon // error uncaught properties of null
+    console.log(image)
     
-    let values = await Promise.all([loc, temperature, condition, image])
+     
+    //let values = await Promise.all([loc, temperature, condition, image])
 
-
+    
   }
+
+  
 
 
   
