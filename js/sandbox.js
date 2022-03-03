@@ -22,9 +22,9 @@ const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2
 
 // async / axios 
 async function loadWeather() {
-  const response = await fetch('api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}');
+  let response = await fetch('api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}');
   console.log(response);
-  const data = response.json();
+  let data = response.json();
   setState(data)
 }
 
