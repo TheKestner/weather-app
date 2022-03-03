@@ -1,13 +1,16 @@
+
+
 //declaring ids 
 let loc = document.getElementById('location');
 let temperature = document.getElementById('temp');
 let condition = document.getElementById('cond');
 let image = document.getElementById('other');
+let userInput = document.getElementById('zip');
 
-const btn = document.getElementById('click','add');
+const btn = document.getElementById('click');
 const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${api}'
-
 //let weatherLink = 'api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=6821542f34e67bbd5a6f5ebac8501730';
+
 //document.getElementById(weather).addEventListener('submit', );
 
 
@@ -18,17 +21,17 @@ const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2
 //   Image:'',
 // }
 
-
-
 // async / axios 
 async function loadWeather() {
-  let response = await fetch('api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}');
+  let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=40504,us&appid=${key}`);
   console.log(response);
-  let data = response.json();
-  setState(data)
+  let data = response.data
+  console.log(data);
 }
 
 loadWeather();
+
+
 
 
 

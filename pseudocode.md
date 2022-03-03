@@ -36,6 +36,14 @@ Create a webpage that prompts users to enter a zip code, then displays current w
     api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
 
     Declare Ids for data
+    let loc = document.getElementById('location');
+    let temperature = document.getElementById('temp');
+    let condition = document.getElementById('cond');
+    let image = document.getElementById('other');
+    let userInput = document.getElementById('zip');
+
+    const btn = document.getElementById('click');
+    const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${api}'
 
     City: "name": exLexington
     Temperature: temp": ex291.49
@@ -48,6 +56,34 @@ Create a webpage that prompts users to enter a zip code, then displays current w
 
     Handle Errors
     Get Request:
+        async function loadWeather() {
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${userInput},us&appid=${key}`);
+        console.log(response);
+        let data = response.json();
+        console.log(data);
+        }
+
+
+        async function displayContent() {
+          let loc = loadWeather(name: [])
+          let temperature = loadWeather(temp: [])
+          let condition = loadWeather(description: [])
+          let image = loadWeather(icon: [])
+          
+          let values = await Promise.all([loc, temperature, condition, image])
+
+
+        }
+
+       
+
+
+
+
+
+
+
+
     // Make a request for a user with a given ID
     axios.get('/user?ID=12345')
     .then(function (response) {
