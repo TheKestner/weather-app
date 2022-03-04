@@ -20,14 +20,15 @@ function getInput() {
 
 // async / axios 
 async function loadWeather() {
+  try {
   let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}`);
   // console.log(response);
   let data = await response.json();
-  // console.log(data);
   setState(data);
+  } catch (err) {
+    console.error('DANGER ZONE! ERROR WITH WEATHER DATA!', err);
   }
-
-  
+}
 
 async function setState(data) {
     loc.innerText = data.name
