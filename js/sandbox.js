@@ -9,7 +9,8 @@ let userInput = document.getElementById('zip');
 let btn = document.getElementById('btn');
 let zip = "";
 const key = '6821542f34e67bbd5a6f5ebac8501730'; //'api.openweathermap.org/data/2.5/weather?zip=${zip}us&appid=${api}'
-
+let c = document.getElementById('cel')
+let f = document.getElementById('fah')
 
 
 function getInput() {
@@ -37,11 +38,21 @@ async function setState(data) {
     // console.log(condition)
     image = data.weather[0].icon // error uncaught properties of null
     // console.log(image)
-    
-     
-    //let values = await Promise.all([loc, temperature, condition, image])
-   }
+    k = data.main.temp
+    c.innerText = k - 273
+    f.innerText = c.innerText * (9/5) + 32
+    //console.log(f)
+    // // f = Math.floor(f)
+  }
 
+  // async function setKfc(data) {
+  //   k = data.main.temp
+  //   c.innerText = k - 273
+  //   f.innnerText = c * (9/5) + 32
+  //   f = Math.floor(f)
+  // }
+  
+  // setKfc();
   
 // setState()
 //  .catch(e => console.log(e));
