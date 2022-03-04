@@ -36,13 +36,16 @@ async function setState(data) {
     // console.log(temperature)
     condition.innerText = data.weather[0].description
     // console.log(condition)
-    image = data.weather[0].icon // error uncaught properties of null
+    icon = data.weather[0].icon // error uncaught properties of null
     // console.log(image)
     k = Math.round(data.main.temp);
     c.innerText = Math.round(k - 273);
-    f.innerText = Math.round(c.innerText * (9/5) + 32)
+    f.innerText = Math.round(c.innerText * (9/5) + 32);
     //console.log(f)
-    // // f = Math.floor(f)
+   
+    iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
+    image.innerHTML = `<img src="${iconUrl}">`;
+    
   }
 
   // async function setKfc(data) {
