@@ -31,22 +31,25 @@ async function loadWeather() {
   
 
 async function setState(data) {
-    loc.innerText = data.name
-    // console.log(loc);
-    temperature.innerText = Math.round(data.main.temp);
-    // console.log(temperature)
-    condition.innerText = data.weather[0].description
-    // console.log(condition)
-    icon = data.weather[0].icon // error uncaught properties of null
-    // console.log(image)
-    k = Math.round(data.main.temp);
-    c.innerText = Math.round(k - 273);
-    f.innerText = Math.round(c.innerText * (9/5) + 32);
-    //console.log(f)
-    
-    iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
-    image.innerHTML = `<img src="${iconUrl}">`;
+  try { loc.innerText = data.name
+  // console.log(loc);
+  temperature.innerText = Math.round(data.main.temp);
+  // console.log(temperature)
+  condition.innerText = data.weather[0].description
+  // console.log(condition)
+  icon = data.weather[0].icon // error uncaught properties of null
+  // console.log(image)
+  k = Math.round(data.main.temp);
+  c.innerText = Math.round(k - 273);
+  f.innerText = Math.round(c.innerText * (9/5) + 32);
+  //console.log(f)
+ 
+  iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
+  image.innerHTML = `<img src="${iconUrl}">`;
+  } catch (err) {
+    alert( "DANGER ZONE: INCORRECT ZIP"); // caught it!
   }
+}
 
   
 

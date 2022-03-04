@@ -31,7 +31,7 @@ async function loadWeather() {
 }
 
 async function setState(data) {
-    loc.innerText = data.name
+    try { loc.innerText = data.name
     // console.log(loc);
     temperature.innerText = Math.round(data.main.temp);
     // console.log(temperature)
@@ -46,17 +46,19 @@ async function setState(data) {
    
     iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
     image.innerHTML = `<img src="${iconUrl}">`;
-    
+    } catch (err) {
+      alert( "DANGER ZONE: INCORRECT ZIP"); // caught it!
+    }
   }
 
-  // async function setKfc(data) {
-  //   k = data.main.temp
-  //   c.innerText = k - 273
-  //   f.innnerText = c * (9/5) + 32
-  //   f = Math.floor(f)
-  // }
-  
-  // setKfc();
+//  async function catchErr(){
+//   try {
+//     setState();
+//   } catch (err) {
+//     alert( "DANGER ZONE: " + err ); // caught it!
+//   }
+//  }
+
   
 // setState()
 //  .catch(e => console.log(e));
