@@ -26,17 +26,17 @@ async function loadWeather() {
 
 async function setState(data) {
     loc.innerText = data.name
-    console.log(loc);
+    //console.log(loc);
     temperature.innerText = data.main.temp
-    console.log(temperature)
+    //console.log(temperature)
     condition.innerText = data.weather[0].description
-    console.log(condition)
-    let image = data.weather[0].icon // error uncaught properties of null
-    console.log(image)
+    //console.log(condition)
+    image = data.weather[0].icon // error uncaught properties of null
+    //console.log(image)
     
-     
-    //let values = await Promise.all([loc, temperature, condition, image])
-
+    k = data.main.temp
+    c.innerText = k - 273
+    f.innerText = c.innerText * (9/5) + 32
     
   }
 

@@ -38,9 +38,10 @@ async function setState(data) {
     // console.log(condition)
     image = data.weather[0].icon // error uncaught properties of null
     // console.log(image)
-    // let k = data.main.temp
-    // c.innerText = k - 273
-    // f.innerText = c * (9/5) + 32
+    k = data.main.temp
+    c.innerText = k - 273
+    f.innerText = c.innerText * (9/5) + 32
+    //console.log(f)
     // // f = Math.floor(f)
   }
 
