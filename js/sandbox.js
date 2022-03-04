@@ -24,6 +24,7 @@ async function loadWeather() {
   let data = await response.json();
   // console.log(data);
   setState(data);
+  setKfc(data);
   }
 
   
@@ -38,9 +39,15 @@ async function setState(data) {
     image = data.weather[0].icon // error uncaught properties of null
     // console.log(image)
     
-     
-    //let values = await Promise.all([loc, temperature, condition, image])
-   }
+  }
+
+  async function setKfc(data) {
+    let k = data.main.temp
+    let c = k - 273;
+    let f = c * (9/5) + 32
+    f = Math.floor(f);
+    console.log(c)
+  }
 
   
 // setState()
